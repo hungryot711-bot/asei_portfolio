@@ -40,7 +40,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('back.webp');
+            background-image: url('bg_shundo.png'); /* スライド版の背景指定に同期 */
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
@@ -261,23 +261,24 @@
             flex-direction: column;
         }
 
+        /* すべての作品画像をはみ出さずに綺麗に収めるためのエリア調整 */
         .work-img-wrapper {
             width: 100%;
             height: 450px;
-            background-color: #fff;
+            background-color: #ffffff; /* 画像の背景を純白にして額縁のように魅せる */
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px; /* 上下左右に余白を設けて、外枠が切れるのを防ぐ */
+            border-bottom: 1px solid rgba(139, 0, 0, 0.05);
         }
 
+        /* object-fit: contain に統一し、あらゆる比率の作品を完全表示 */
         .work-img-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-        }
-
-        /* 縦長の作品を収めるためのスタイル */
-        .work-img-wrapper.contain img {
             object-fit: contain;
-            padding: 15px;
         }
 
         .work-info {
@@ -310,6 +311,7 @@
             color: #666;
             margin-bottom: 15px;
             font-family: 'Arimo', sans-serif;
+            font-weight: bold;
         }
 
         .work-info p {
@@ -323,6 +325,7 @@
             color: #8b0000;
             margin-top: auto;
             font-weight: 700;
+            padding-top: 10px;
         }
 
         /* --- 書歴 (History) --- */
@@ -413,6 +416,18 @@
             text-align: justify;
         }
 
+        /* 落款・印章セクション */
+        .seal-container {
+            text-align: center;
+            padding: 40px 20px;
+            border-bottom: 1px solid rgba(139, 0, 0, 0.1);
+        }
+        .seal-container img {
+            max-width: 120px;
+            height: auto;
+            opacity: 0.85;
+        }
+
         /* --- お問い合わせ (Contact) --- */
         #contact {
             border-bottom: none;
@@ -498,7 +513,7 @@
 
     <!-- メインビジュアル -->
     <section id="hero">
-        <p class="subtitle">MODERN JAPANESE CALLIGRAPHER</p>
+        <p class="subtitle">ART CALLIGRAPHY PORTFOLIO</p>
         <h1>蛙聲 <span style="font-weight: 400; font-size: 50px; font-family: 'Arimo', sans-serif;">Asei</span></h1>
         <hr style="width: 80px; border: 1.5px solid #8b0000; margin: 20px auto;">
         <p class="concept-line">命を吹き込む、書の呼吸</p>
@@ -508,10 +523,9 @@
     <!-- 作家紹介 (About) -->
     <section id="about">
         <h2 class="section-title">作家紹介</h2>
-        <p class="section-subtitle-en">Artist Statement & Profile</p>
+        <p class="section-subtitle-en">ARTIST PROFILE & STATEMENT</p>
         <div class="about-container">
             <div class="about-img-box">
-                <!-- プロフィール写真用（四角形・小サイズ調整済み） -->
                 <img src="profile.jpg" alt="現代書道家 蛙聲 Asei">
             </div>
             <div class="about-text-box">
@@ -519,20 +533,20 @@
                 <span class="sub-h3">Art is born from the fire of survival.</span>
                 
                 <p>
-                    1973年兵庫県生まれ、姫路市在住。玄燿書道会所属.
-                    <span class="en-text">Born in Hyogo Prefecture in 1973, currently residing in Himeji City. Member of the Genyo Calligraphy Society.</span>
+                    1973年兵庫県生まれ、姫路市在住。玄燿書道会所属。
+                    <span class="en-text">Born in Hyogo in 1973. Member of Genyo Calligraphy Association.</span>
                 </p>
                 <p>
-                    2000年に師範を取得するも、最愛の師（山根溪石先生）の他界、自身や家族の体調不良が重なり、一度は書道を完全に封印しました. しかし昨年、断捨離をしていた際にどうしても書道の道具だけは捨てられない自分に気づき、同じ会派の師の直弟子にあたる先生の元へ再入門. 25年ぶりに再び書の道を歩み始めました.
-                    <span class="en-text">After earning my Master's License in 2000, a deep void swallowed my world due to the sudden passing of my master, Master Keiseki Yamane, alongside severe personal and family illnesses, leading me to completely seal away my calligraphy. However, last year, while decluttering, I realized I couldn't bring myself to discard my calligraphy tools. Guided back to the brush, I re-entered the same school under my master's direct disciple, restarting my artistic journey after 25 years.</span>
+                    2000年に師範を取得するも、最愛 of 師（山根溪石先生）の他界、自身や家族の体調不良（線維筋痛症）が重なり、一度は書道を完全に封印しました。しかし昨年、断捨離を機に道具を捨てられない自分に気づき、同じ会派の師の井上映粧先生の元へ再入門。25年ぶりに再び書の道を歩み始めました。
+                    <span class="en-text">After earning my Master's License in 2000, the passing of my master Master Keiseki Yamane and personal illness (Fibromyalgia) forced me to seal away my calligraphy. Last year, unable to discard my tools while decluttering, I re-entered the brush under my master's direct disciple, restarting my journey after 25 years.</span>
                 </p>
                 <p>
-                    私はかつて、激しい痛みを伴う「線維筋痛症」を患いました（現在は寛解）. 自分自身が身体の不自由さや痛みを経験したからこそ、今、介護福祉士として接する高齢者の方々や、障害を持たれている方々の気持ちが痛いほど理解できるようになりました.
-                    <span class="en-text">Life tested me through severe illness (Fibromyalgia, currently in remission). Having experienced physical limitations and pain firsthand, I can now deeply empathize with the feelings of the elderly and individuals with disabilities whom I care for.</span>
+                    自分自身が身体の不自由さや痛みを経験したからこそ、今、介護福祉士として夜勤専従で接する高齢者の方々や、障害を持たれている方々の気持ちが痛いほど理解できるようになりました。
+                    <span class="en-text">Having experienced physical limitations, I deeply empathize with the elderly and individuals with disabilities whom I care for as a night-caregiver.</span>
                 </p>
                 <p>
-                    高齢者施設での夜勤専従職員として人の生死に向き合う日々の中で、新しく「アート書」への挑戦を開始. 「高齢者や障害者、社会に関わるすべての人に笑顔になってもらいたい」という祈りを込め、一滴の墨に生命を吹き込み続けています.
-                    <span class="en-text">Working as a certified caregiver holding the hands of the elderly at the end of their life journeys, I began exploring contemporary art calligraphy. I do not write simply to show beautiful letters; I strike the paper to bring life-energy to the weary, to bring smiles to the broken, and to honor the resilience of human souls.</span>
+                    そして、生死に向き合う福祉の現場で、日々懸命に利用者様を支え、現場を存続させている介護士たちの情熱や「影の支え」としての奮闘を伝えていきたいと考えています。過酷な状況下でも笑顔を絶やさぬスタッフや関わるすべての人に希望を届けたいという祈りを込め、一滴の墨に生命を吹き込み続けています。
+                    <span class="en-text">Facing life and death daily, I want to express the dedication and silent endurance of the caregiving staff who work relentlessly on the frontlines to sustain the welfare field as an unsung support system. Desiring to bring hope and smiles to these hard-working staff and all who are involved, I infuse every drop of ink with vital life-energy.</span>
                 </p>
             </div>
         </div>
@@ -541,10 +555,10 @@
     <!-- 作品実績 (Works) -->
     <section id="works">
         <h2 class="section-title">主要作品・実績</h2>
-        <p class="section-subtitle-en">Featured Works & Awards</p>
+        <p class="section-subtitle-en">FEATURED WORKS & AWARDS</p>
         <div class="works-grid">
 
-            <!-- 作品1: 春動花開（拡張子をjpgに変更） -->
+            <!-- 作品1: 春動花開 -->
             <div class="work-card">
                 <div class="work-img-wrapper">
                     <img src="work_shundo.jpg" alt="春動花開 桜と蛙">
@@ -552,38 +566,39 @@
                 <div class="work-info">
                     <span class="work-tag">NY International Calligraphy Exhibition - Runner-up Prize</span>
                     <h3>春動花開 桜と蛙</h3>
-                    <p class="size">Spring Awakens and Flowers Blossom (2026)</p>
-                    <p>介護士として働きながら、日々古典の勉強と作品活動に励む中で生まれたアート書. 桜の舞う優美さと蛙の跳び出すような春の生命力を、豊かなデザインと物語性で表現. ニューヨーク国際書道展にて準優勝賞受賞.</p>
-                    <p class="en-text">A contemporary piece created while working diligently as a caregiver. It beautifully captures the elegance of dancing cherry blossoms and the vibrant life-force of a leaping frog, weaving a narrative through design. Awarded the Runner-up Prize at the New York International Calligraphy Exhibition.</p>
+                    <p class="size">【作品サイズ：56cm × 53cm (22 × 20.8in)】</p>
+                    <p>介護士として夜勤専従で働きながら、日々古典の勉強と作品活動に励む中で生まれたアート書。寒い冬が終われば必ず温かい春が来るという希望を込め、世界中の人々に愛される桜の舞う優美さと、蛙の跳び出すような春の生命力を、豊かなデザインと物語性、精度高きコンセプトで表現。ニューヨーク国際書道展にて準優勝賞を受賞。</p>
+                    <p class="en-text">This calligraphy artwork was created while working exclusively on night shifts as a caregiver, balancing daily classical studies and creative pursuits. Conveying the hope that a warm spring always follows a cold winter, it expresses the elegance of cherry blossoms—loved by people all over the world—and the vibrant vitality of spring, like a leaping frog, through rich design, storytelling, and a refined concept. Awarded Second Prize at the New York International Calligraphy Exhibition.</p>
+                    <p class="hyogu">表具 / Mounting：玉木楽山堂</p>
                 </div>
             </div>
 
             <!-- 作品2: 長恨歌 -->
             <div class="work-card">
-                <div class="work-img-wrapper contain">
+                <div class="work-img-wrapper">
                     <img src="work_chogonka.jpg" alt="長恨歌">
                 </div>
                 <div class="work-info">
                     <span class="work-tag">Genyo Exhibition - Kobe Cultural Support Foundation Prize</span>
                     <h3>長恨歌</h3>
-                    <p class="size">240cm × 60cm | Song of Everlasting Regret (2026)</p>
-                    <p>政治の混乱による永遠の別れを描いた白居易の詩. 現代の混迷や、突然訪れる大切な人との別れを重ね合わせ、深い愛情を生命力溢れる筆致で表現. 第76回 玄耀書道展 会員の部受賞.</p>
-                    <p class="en-text">Based on the classic poem depicting profound love and eternal parting amidst political turmoil. Overlapping with the chaos and sudden losses of our modern world, this piece expresses deep affection and resilience. Winner of the Kobe Cultural Support Foundation Prize.</p>
+                    <p class="size">【作品サイズ：240cm × 60cm (94.4 × 23.6in)】</p>
+                    <p>政治の混乱による悲劇的な別れを描いた白居易の詩。現代の災害や混迷、突然の別れに重ね合わせ、家族や大切な人を想う深い愛情を生命力溢れる筆致で表現。第76回 玄耀書道展 会員の部にて「神戸市民文化振興財団賞」を受賞した渾身の大作。</p>
+                    <p class="en-text">Based on the classic poem depicting profound love and eternal parting amidst political turmoil. Overlapping with the chaos and sudden losses of our modern world, this piece expresses deep affection and resilience. Winner of the Kobe Cultural Support Foundation Prize at the 76th Genyo Exhibition.</p>
                     <p class="hyogu">表具 / Mounting：玉木楽山堂</p>
                 </div>
             </div>
 
             <!-- 作品3: 春園 -->
             <div class="work-card">
-                <div class="work-img-wrapper contain">
+                <div class="work-img-wrapper">
                     <img src="work_shunen.jpg" alt="春園">
                 </div>
                 <div class="work-info">
                     <span class="work-tag">Hyogo Prefectural Exhibition - Accepted</span>
                     <h3>春園</h3>
-                    <p class="size">240cm × 60cm | Shunen - Spring Garden (2026)</p>
-                    <p>穏やかな隠遁生活を楽しむ老人の日常を描いた詩. 介護士として接する高齢者たちの「時代を生き抜いた力強さ」と「老いた儚さ」の双方を重ね合わせた、25年ぶりの復帰第一作. 兵庫県展公募入選.</p>
-                    <p class="en-text">This piece illustrates the peaceful, quiet retirement of an old man. As a caregiver, I infused this calligraphy with both the incredible strength of the elderly who survived history and their gentle, fragile side. Deeply honored to be accepted into the Hyogo Prefectural Exhibition as my first piece in 25 years.</p>
+                    <p class="size">【作品サイズ：240cm × 60cm (94.5 × 23.6in)】</p>
+                    <p>中国・明時代の詩人袁凱の詩の一部。俗を離れて穏やかな隠遁生活を楽しむ老人の日常を描いた詩。介護士として日々接する高齢者たちの「時代を生き抜いた力強さ」と「老いた儚さ」の双方を重ね合わせ、理想の年の重ね方をイメージした作品。兵庫県展公募入選を果たした、25年ぶりの復帰第一作。</p>
+                    <p class="en-text">This piece illustrates the peaceful, quiet retirement of an old man. As a caregiver, I infused this calligraphy with both the incredible strength of the elderly who survived history and their gentle, fragile side. Accepted into the Hyogo Prefectural Exhibition as my first piece in 25 years.</p>
                     <p class="hyogu">表具 / Mounting：玉木楽山堂</p>
                 </div>
             </div>
@@ -594,35 +609,35 @@
     <!-- 書歴 (History) -->
     <section id="history">
         <h2 class="section-title">書の歩み</h2>
-        <p class="section-subtitle-en">Calligraphy Chronology</p>
+        <p class="section-subtitle-en">CALLIGRAPHY CHRONOLOGY</p>
         <div class="history-timeline">
             <div class="history-item">
-                <span class="history-year">1995</span>
-                <p class="history-desc">山根溪石先生に入門。書の神髄を学び始める.<br><span class="en-text">Began studying under Master Keiseki Yamane.</span></p>
+                <span class="history-year">2026年</span>
+                <p class="history-desc">ニューヨーク国際書道展にて『春動花開』が準優勝賞を受賞。第76回 玄耀書道展にて神戸市民文化振興財団賞を受賞。兵庫県展入選。<br><span class="en-text">Awarded Runner-up Prize at NY Exhibition. Won Foundation Prize at Genyo Exhibition. Accepted into the Hyogo Prefectural Exhibition.</span></p>
             </div>
             <div class="history-item">
-                <span class="history-year">1997 - 1999</span>
-                <p class="history-desc">読売書法展にて通算3回入選.<br><span class="en-text">Accepted into the Yomiuri Shofoten Exhibition three times.</span></p>
+                <span class="history-year">2025年</span>
+                <p class="history-desc">道具の断捨離を機に元の師の直弟子である井上映粧先生に師事し再入門。ニューヨーク国際書道展にて「翔」が入選し奇跡の再起を果たす。<br><span class="en-text">Guided back to the brush by re-entering the school under Master Eisho Inoue. Miraculously accepted into the NY Exhibition with the piece "Sho" (To Soar).</span></p>
             </div>
             <div class="history-item">
-                <span class="history-year">1999</span>
-                <p class="history-desc">玄耀書道会 会員 / 兵庫県書作家協会 準会員に推挙.<br><span class="en-text">Recommended as a Member of Genyo Calligraphy Society and Associate Member of the Hyogo Calligrapher Association.</span></p>
+                <span class="history-year">2000年 - 2024年</span>
+                <p class="history-desc">師の他界、自身や家族の病気（線維筋痛症）が重なり、書道を完全に封印する。<br><span class="en-text">Due to master's passing and personal illness, sealed away calligraphy for 24 years.</span></p>
             </div>
             <div class="history-item">
-                <span class="history-year">2000</span>
-                <p class="history-desc">日本書芸院 二科会員推薦賞 受賞. 同年、師範試験取得.<br><span class="en-text">Received the Nihon Shogeiin Nika Member Recommendation Award. Earned Master's License.</span></p>
+                <span class="history-year">2000年 2月</span>
+                <p class="history-desc">日本書芸院 二科会員推薦賞 受賞。同年、最高資格「師範」を取得。<br><span class="en-text">Received the Nihon Shogeiin Nika Member Recommendation Award. Successfully earned Calligraphy Master's License.</span></p>
             </div>
             <div class="history-item">
-                <span class="history-year">2000 - 2024</span>
-                <p class="history-desc">最愛の師の他界、自身の病気などにより、一時書道を封印する.<br><span class="en-text">Temporarily sealed away calligraphy due to the master's passing and personal illness.</span></p>
+                <span class="history-year">1999年</span>
+                <p class="history-desc">玄耀書道会 会員、および兵庫県書作家協会 準会員に推挙。<br><span class="en-text">Recommended as a Member of Genyo Calligraphy Society and Associate Member of the Hyogo Calligrapher Association.</span></p>
             </div>
             <div class="history-item">
-                <span class="history-year">2025</span>
-                <p class="history-desc">道具の断捨離を機に玄燿書道会へ再入門. ニューヨーク国際書道展にて「翔」が入選し奇跡の再起を果たす.<br><span class="en-text">Re-entered Genyo Society. Achieved a miraculous comeback with my piece "Sho" (To Soar) accepted at the NY International Calligraphy Exhibition.</span></p>
+                <span class="history-year">1997年 - 1999年</span>
+                <p class="history-desc">国内最高峰の公募展の一つ「読売書法展」にて通算3回入選を果たす。<br><span class="en-text">Accepted into the Yomiuri Shofoten Exhibition three times in total.</span></p>
             </div>
             <div class="history-item">
-                <span class="history-year">2026</span>
-                <p class="history-desc">ニューヨーク国際書道展にて『春動花開』が準優勝賞を受賞. 第76回 玄耀書道展にて神戸市民文化振興財団賞を受賞. 兵庫県展入選.<br><span class="en-text">Awarded the **Runner-up Prize** at the NY Exhibition. Won the **Kobe Cultural Support Foundation Prize** at the 76th Genyo Exhibition. Accepted into the Hyogo Prefectural Exhibition.</span></p>
+                <span class="history-year">1995年 5月</span>
+                <p class="history-desc">山根溪石先生に入門。書の深淵と神髄を学び始める。<br><span class="en-text">Entered under Master Keiseki Yamane. Began learning the essence and depth of calligraphy.</span></p>
             </div>
         </div>
     </section>
@@ -630,31 +645,36 @@
     <!-- 今後のビジョン (Vision) -->
     <section id="vision">
         <h2 class="section-title">今後のビジョン</h2>
-        <p class="section-subtitle-en">Future Vision</p>
+        <p class="section-subtitle-en">FUTURE VISION & SUPPORT</p>
         <div class="vision-grid">
             <div class="vision-card">
                 <i class="fa-solid fa-wheelchair"></i>
-                <h3>バリアフリーアート書の構想</h3>
-                <span class="en-title">Accessible & Barrier-Free Art</span>
-                <p>身体が不自由な方でも、見るだけで内側から湧き上がるエネルギーを感じ、心と魂で通じ合えるバリアフリーな作品・空間の制作を目指しています。</p>
-                <p class="en-text">Aiming to design barrier-free art installations where individuals with disabilities can experience raw life-energy and connect on a spiritual level.</p>
+                <h3>1. バリアフリーアート書の構想</h3>
+                <span class="en-title">Barrier-Free Art</span>
+                <p>身体の不自由な方や痛みを経験したからこそ、誰もがハンディキャップに関係なく生命力を体感し、見るだけで内側から湧き上がるエネルギーを感じて、心と魂で深く繋がることができるバリアフリーな作品・空間展示を構想しています。</p>
+                <p class="en-text">Designing barrier-free art installations where anyone, regardless of physical limitations, can feel raw life-energy and connect on a soul level.</p>
             </div>
             <div class="vision-card">
                 <i class="fa-solid fa-face-smile"></i>
-                <h3>福祉施設レクリエーション提案</h3>
-                <span class="en-title">Care Facility Workshops</span>
-                <p>高齢者施設や障害者施設において、書の楽しさに触れ、誰もが内側から自然と笑顔になれるような、新しい書道レクリエーションの企画・提案を行います。</p>
-                <p class="en-text">Proposing and implementing innovative calligraphy workshops in elderly and disability care facilities to bring pure joy and therapeutic smiles.</p>
+                <h3>2. 福祉施設レクリエーションの企画提案</h3>
+                <span class="en-title">Workshops</span>
+                <p>高齢者施設や障害者施設において、一人ひとりの生きる表現力を引き出す新しい書道レクリエーションを提案。書の楽しさに触れ、参加者や現場の過酷なケアスタッフに内側から自然と笑顔を届けます。</p>
+                <p class="en-text">Proposing dynamic calligraphy workshops in care facilities to bring therapeutic joy and genuine smiles to both residents and overworked care staff.</p>
             </div>
             <div class="vision-card">
                 <i class="fa-solid fa-handshake-angle"></i>
-                <h3>協働パートナー・サポート募集</h3>
-                <span class="en-title">Seeking Partners & Supporters</span>
-                <p>上記の施設活動やバリアフリー作品展開のビジョンに共感し、一緒にサポート・協力をしてくださる個人・企業の方を広く募集しています。</p>
-                <p class="en-text">We are actively seeking passionate collaborators, sponsors, and supporters who share our vision of merging welfare and art.</p>
+                <h3>3. パートナー・作品オーダー募集</h3>
+                <span class="en-title">Partnership & Order</span>
+                <p>社会に関わるすべての人に笑顔を届ける活動やビジョンに共感し、一緒にサポート・協力をしてくださる個人・企業様を広く募集しています。店舗ロゴ、インテリア書、大切な人へのギフトなど、各種オーダーメイド制作も随時承っております。</p>
+                <p class="en-text">Seeking collaborators and supporters who share our vision of merging welfare and art. We also accept custom commissions (store logos, interior art, personalized gifts).</p>
             </div>
         </div>
     </section>
+
+    <!-- 落款・印章 -->
+    <div class="seal-container">
+        <img src="in.png" alt="蛙聲 印章">
+    </div>
 
     <!-- お問い合わせ (Contact) -->
     <section id="contact">
@@ -662,7 +682,7 @@
         <p class="section-subtitle-en">Commissions & Inquiries</p>
         <div class="contact-wrapper">
             <p>店舗ロゴ、インテリア書、大切な人へのギフトなど、各種オーダーメイドの作品制作（オーダー）を承っております。お気軽にお問い合わせください。</p>
-            <p class="en-text" style="margin-top: -20px; margin-bottom: 30px;">For custom calligraphy works, interior art, exhibition collaborations, or any custom orders, please feel free to reach out.</p>
+            <p class="en-text" style="margin-top: -20px; margin-bottom: 30px;">For custom calligraphy works, interior art, exhibition collaborations, or any custom orders, please feel free to reach out via Instagram (@ASEI_2026).</p>
             <ul class="contact-info">
                 <li><i class="fa-envelope"></i> a.andy.choco.love.labrador@gmail.com</li>
                 <li><i class="fa-phone"></i> +81-90-1138-4738</li>
